@@ -5,43 +5,41 @@
 
 :root {
   --font-mono: "IBM Plex Mono", monospace;
-
-  /* light mode */
   --bg: #fdf8ff;
-  --bg-sidebar: #fdf0fb;
-  --border: #f0d6f0;
-  --border-hover: #d4a8e8;
-  --ink: #2d1f3d;
-  --ink-soft: #6b4d8a;
-  --ink-muted: #9078a8;
-  --ink-faint: #b8a0c8;
-  --ink-ghost: #c4a8d4;
-  --accent: #a855c8;
-  --accent-soft: #c084d4;
+  --bg-sidebar: #e8e0f5;
+  --border: #c8b8e8;
+  --border-hover: #8060c0;
+  --ink: #0f0820;
+  --ink-soft: #2a1848;
+  --ink-muted: #4a3070;
+  --ink-faint: #6a4d90;
+  --ink-ghost: #8a6db0;
+  --accent: #6030a8;
+  --accent-soft: #7848c0;
   --card: #ffffff;
-  --card-hover: #fdf4ff;
-  --nav-hover: #f0d6f7;
-  --nav-active: #f0d6f7;
-  --rainbow: linear-gradient(90deg, #f0b8f8, #b8d4f8, #b8f8e8);
+  --card-hover: #f5f0ff;
+  --nav-hover: #d8cef0;
+  --nav-active: #c8b8e8;
+  --rainbow: linear-gradient(90deg, #d8b8f8, #b8d4f8, #b8f8e8);
 }
 
 [data-theme="dark"] {
-  --bg: #1a1025;
-  --bg-sidebar: #140d1e;
-  --border: #2e1f42;
-  --border-hover: #7040a0;
-  --ink: #f0e8ff;
-  --ink-soft: #c8b0e8;
-  --ink-muted: #9878b8;
-  --ink-faint: #6a4d8a;
-  --ink-ghost: #4a3568;
-  --accent: #c084d4;
-  --accent-soft: #a060b8;
-  --card: #1e1230;
-  --card-hover: #241438;
-  --nav-hover: #2a1840;
-  --nav-active: #2e1f42;
-  --rainbow: linear-gradient(90deg, #8040a0, #4060c0, #408080);
+  --bg: #0f0820;
+  --bg-sidebar: #1a1030;
+  --border: #3a2858;
+  --border-hover: #7048a8;
+  --ink: #f0eaff;
+  --ink-soft: #d8c8f8;
+  --ink-muted: #b098d8;
+  --ink-faint: #8868b0;
+  --ink-ghost: #6848a0;
+  --accent: #c090f8;
+  --accent-soft: #a870e0;
+  --card: #180e2a;
+  --card-hover: #221438;
+  --nav-hover: #2a1848;
+  --nav-active: #3a2858;
+  --rainbow: linear-gradient(90deg, #8040b0, #4060c0, #408080);
 }
 
 * {
@@ -56,8 +54,8 @@ html {
 
 body {
   font-family: var(--font-mono);
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.7;
   transition:
     background 0.2s,
     color 0.2s;
@@ -88,7 +86,7 @@ select {
   border-radius: 6px;
   padding: 7px 10px;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--ink);
   outline: none;
   transition:
@@ -100,7 +98,7 @@ input[type="text"]:focus,
 input[type="number"]:focus,
 select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(168, 85, 200, 0.15);
+  box-shadow: 0 0 0 3px rgba(96, 48, 168, 0.12);
 }
 
 input[type="range"] {
@@ -113,10 +111,10 @@ input[type="range"] {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 14px;
+  padding: 8px 16px;
   border-radius: 6px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.12s;
@@ -129,7 +127,8 @@ input[type="range"] {
   border-color: var(--accent);
 }
 .btn-primary:hover {
-  opacity: 0.85;
+  background: var(--border-hover);
+  border-color: var(--border-hover);
 }
 .btn-ghost {
   background: transparent;
@@ -167,7 +166,7 @@ input[type="range"] {
   border-color: var(--border-hover);
   background: var(--card-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(160, 80, 220, 0.1);
+  box-shadow: 0 4px 16px rgba(96, 48, 168, 0.1);
 }
 
 /* featured card */
@@ -196,7 +195,7 @@ input[type="range"] {
 .feat-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(160, 80, 220, 0.1);
+  box-shadow: 0 4px 16px rgba(96, 48, 168, 0.1);
 }
 
 /* nav active */
@@ -207,15 +206,16 @@ input[type="range"] {
 
 /* section heading */
 .section-head {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent-soft);
+  color: var(--accent);
   margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
+  font-weight: 500;
 }
 .section-head::after {
   content: "";
@@ -230,14 +230,15 @@ input[type="range"] {
   border: 1.5px solid var(--border-hover);
   border-radius: 6px;
   color: var(--accent);
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
-  padding: 4px 9px;
+  padding: 5px 10px;
   font-family: var(--font-mono);
   transition: all 0.12s;
   line-height: 1;
 }
 .theme-toggle:hover {
-  border-color: var(--border-hover);
-  color: var(--accent);
+  background: var(--card-hover);
+  border-color: var(--accent);
+  transform: scale(1.05);
 }
