@@ -2,6 +2,7 @@
 import "./globals.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const nav = [
   {
@@ -32,6 +33,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const path = usePathname();
+  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") {
+      setDark(true);
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !dark;
+    setDark(next);
+    document.documentElement.setAttribute(
+      "data-theme",
+      next ? "dark" : "light",
+    );
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
 
   return (
     <html lang="en">
@@ -62,6 +82,7 @@ export default function RootLayout({
               top: 0,
               height: "100vh",
               overflowY: "auto",
+              transition: "background 0.2s, border-color 0.2s",
             }}
           >
             {/* logo */}
@@ -83,8 +104,7 @@ export default function RootLayout({
                   letterSpacing: "-0.02em",
                 }}
               >
-                tinytinker<span style={{ color: "var(--accent-soft)" }}>✦</span>
-                tools
+                tinytinker<span style={{ color: "var(--accent)" }}>✦</span>tools
               </div>
               <div
                 style={{
@@ -103,7 +123,6 @@ export default function RootLayout({
             <nav style={{ flex: 1, padding: "12px 8px" }}>
               {nav.map((section) => (
                 <div key={section.label} style={{ marginBottom: 18 }}>
-                  {/* category label */}
                   <div
                     style={{
                       fontSize: 11,
@@ -140,7 +159,7 @@ export default function RootLayout({
                         onMouseEnter={(e) => {
                           if (!active)
                             (e.currentTarget as HTMLElement).style.background =
-                              "#f0d6f7";
+                              "var(--nav-hover)";
                         }}
                         onMouseLeave={(e) => {
                           if (!active)
@@ -180,10 +199,32 @@ export default function RootLayout({
           </aside>
 
           {/* main content */}
-          <main style={{ flex: 1, minWidth: 0, background: "var(--bg)" }}>
+          <main
+            style={{
+              flex: 1,
+              minWidth: 0,
+              background: "var(--bg)",
+              transition: "background 0.2s",
+            }}
+          >
             {children}
           </main>
         </div>
+
+        {/* fixed dark mode toggle */}
+        <button
+          className="theme-toggle"
+          onClick={toggleTheme}
+          title={dark ? "switch to light" : "switch to dark"}
+          style={{
+            position: "fixed",
+            top: 16,
+            right: 20,
+            zIndex: 100,
+          }}
+        >
+          {dark ? "☀︎" : "☽"}
+        </button>
       </body>
     </html>
   );
