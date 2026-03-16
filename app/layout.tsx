@@ -5,24 +5,24 @@ import { usePathname } from "next/navigation";
 
 const nav = [
   {
-    label: "Electronics",
+    label: "electronics",
     items: [
-      { href: "/tools/resistor", label: "Resistor decoder" },
-      { href: "/tools/ohms-law", label: "Ohm's law calc" },
-      { href: "/tools/wire-gauge", label: "Wire gauge ref" },
+      { href: "/tools/resistor", label: "resistor decoder" },
+      { href: "/tools/ohms-law", label: "ohm's law calc" },
+      { href: "/tools/wire-gauge", label: "wire gauge ref" },
     ],
   },
   {
-    label: "Generators",
-    items: [{ href: "/tools/palette", label: "Color palette gen" }],
+    label: "generators",
+    items: [{ href: "/tools/palette", label: "color palette gen" }],
   },
   {
-    label: "Print & Zine",
-    items: [{ href: "/tools/zine-imposer", label: "Zine imposer" }],
+    label: "print & zine",
+    items: [{ href: "/tools/zine-imposer", label: "zine imposer" }],
   },
   {
-    label: "Measurements",
-    items: [{ href: "/tools/unit-converter", label: "Unit converter" }],
+    label: "measurements",
+    items: [{ href: "/tools/unit-converter", label: "unit converter" }],
   },
 ];
 
@@ -39,22 +39,22 @@ export default function RootLayout({
         <title>tinytinker.tools</title>
         <meta
           name="description"
-          content="Tinkerer tools for people who make things."
+          content="tinkerer tools for people who make things."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙</text></svg>"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>"
         />
       </head>
       <body>
         <div style={{ display: "flex", minHeight: "100vh" }}>
-          {/* Sidebar */}
+          {/* sidebar */}
           <aside
             style={{
-              width: 200,
+              width: 210,
               flexShrink: 0,
-              borderRight: "1px solid var(--border)",
+              borderRight: "1.5px solid var(--border)",
               background: "var(--bg-sidebar)",
               display: "flex",
               flexDirection: "column",
@@ -64,55 +64,61 @@ export default function RootLayout({
               overflowY: "auto",
             }}
           >
-            {/* Logo */}
+            {/* logo */}
             <Link
               href="/"
               style={{
                 textDecoration: "none",
                 display: "block",
                 padding: "20px 16px 16px",
-                borderBottom: "1px solid var(--border)",
+                borderBottom: "1.5px solid var(--border)",
               }}
             >
               <div
                 style={{
                   fontFamily: "var(--font-mono)",
-                  fontSize: 13,
+                  fontSize: 15,
                   fontWeight: 500,
                   color: "var(--ink)",
                   letterSpacing: "-0.02em",
                 }}
               >
-                tinytinker<span style={{ color: "var(--accent)" }}>.</span>tools
+                tinytinker<span style={{ color: "var(--accent-soft)" }}>✦</span>
+                tools
               </div>
               <div
                 style={{
                   fontFamily: "var(--font-mono)",
-                  fontSize: 9,
-                  color: "var(--ink-faint)",
+                  fontSize: 11,
+                  color: "var(--ink-ghost)",
                   marginTop: 3,
-                  letterSpacing: "0.12em",
+                  letterSpacing: "0.1em",
                 }}
               >
-                handmade toolbox
+                handmade web tools
               </div>
             </Link>
 
-            {/* Nav */}
+            {/* nav */}
             <nav style={{ flex: 1, padding: "12px 8px" }}>
               {nav.map((section) => (
                 <div key={section.label} style={{ marginBottom: 18 }}>
+                  {/* category label */}
                   <div
                     style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 9,
-                      color: "var(--ink-faint)",
-                      letterSpacing: "0.14em",
-                      textTransform: "uppercase",
-                      padding: "0 8px",
+                      fontSize: 11,
+                      letterSpacing: "0.16em",
+                      color: "var(--ink-ghost)",
+                      padding: "0 6px",
                       marginBottom: 5,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 4,
                     }}
                   >
+                    <span style={{ color: "var(--accent-soft)", fontSize: 8 }}>
+                      ✦
+                    </span>
                     {section.label}
                   </div>
                   {section.items.map((item) => {
@@ -123,19 +129,18 @@ export default function RootLayout({
                         href={item.href}
                         className={active ? "nav-link-active" : ""}
                         style={{
-                          display: "flex",
-                          alignItems: "center",
-                          padding: "5px 8px",
-                          fontSize: 11,
+                          display: "block",
+                          padding: "5px 6px",
+                          fontSize: 13,
                           color: active ? "var(--ink)" : "var(--ink-soft)",
                           textDecoration: "none",
-                          borderRadius: 6,
+                          borderRadius: 5,
                           transition: "all 0.1s",
                         }}
                         onMouseEnter={(e) => {
                           if (!active)
                             (e.currentTarget as HTMLElement).style.background =
-                              "var(--card-hover)";
+                              "#f0d6f7";
                         }}
                         onMouseLeave={(e) => {
                           if (!active)
@@ -151,28 +156,30 @@ export default function RootLayout({
               ))}
             </nav>
 
-            {/* Footer */}
+            {/* footer */}
             <div
               style={{
                 padding: "12px 16px",
-                borderTop: "1px solid var(--border)",
+                borderTop: "1.5px solid var(--border)",
               }}
             >
               <div
                 style={{
                   fontFamily: "var(--font-mono)",
-                  fontSize: 9,
+                  fontSize: 11,
                   color: "var(--ink-ghost)",
-                  lineHeight: 1.9,
+                  lineHeight: 2,
                   letterSpacing: "0.04em",
                 }}
               >
+                no logins. no tracking.
+                <br />
                 handmade web tools.
               </div>
             </div>
           </aside>
 
-          {/* Main */}
+          {/* main content */}
           <main style={{ flex: 1, minWidth: 0, background: "var(--bg)" }}>
             {children}
           </main>

@@ -3,72 +3,72 @@ import Link from "next/link";
 const featured = [
   {
     href: "/tools/resistor",
-    label: "Resistor decoder",
-    desc: "Read color bands, get resistance values & tolerances instantly.",
+    label: "resistor decoder",
+    desc: "read color bands, get resistance values & tolerances instantly.",
     category: "electronics",
   },
   {
     href: "/tools/ohms-law",
-    label: "Ohm's law calc",
-    desc: "Solve for V, I, R, or P — includes LED resistor calculator.",
+    label: "ohm's law calc",
+    desc: "solve for V, I, R, or P — includes LED resistor calculator.",
     category: "electronics",
   },
   {
     href: "/tools/palette",
-    label: "Color palette gen",
-    desc: "Generate harmonious palettes from any seed color.",
+    label: "color palette gen",
+    desc: "generate harmonious palettes from any seed color.",
     category: "generators",
   },
 ];
 
 const allTools = [
   {
-    section: "Electronics & Circuits",
+    section: "electronics & circuits",
     tools: [
       {
         href: "/tools/resistor",
-        label: "Resistor decoder",
-        desc: "Color band → resistance value",
+        label: "resistor decoder",
+        desc: "color band → resistance value",
       },
       {
         href: "/tools/ohms-law",
-        label: "Ohm's law / LED calc",
+        label: "ohm's law / LED calc",
         desc: "V, I, R, P solver + LED resistor",
       },
       {
         href: "/tools/wire-gauge",
-        label: "Wire gauge reference",
+        label: "wire gauge reference",
         desc: "AWG ↔ mm², ampacity, resistance",
       },
     ],
   },
   {
-    section: "Generators",
+    section: "generators",
     tools: [
       {
         href: "/tools/palette",
-        label: "Color palette gen",
-        desc: "Harmonious palettes from any seed color",
+        label: "color palette gen",
+        desc: "harmonious palettes from any seed color",
       },
     ],
   },
   {
-    section: "Print & Zine",
+    section: "print & zine",
     tools: [
       {
         href: "/tools/zine-imposer",
-        label: "Zine imposer",
+        label: "zine imposer",
         desc: "8-page mini-zine fold layout",
       },
     ],
   },
   {
-    section: "Measurements",
+    section: "measurements",
     tools: [
       {
         href: "/tools/unit-converter",
-        label: "Unit converter",
-        desc: "Length, weight, temp, fabric, wire & more",
+        label: "unit converter",
+        desc: "length, weight, temp, fabric, wire & more",
       },
     ],
   },
@@ -76,15 +76,36 @@ const allTools = [
 
 export default function Home() {
   return (
-    <div style={{ maxWidth: 820, margin: "0 auto", padding: "48px 36px" }}>
-      {/* Hero */}
+    <div style={{ maxWidth: 820, margin: "0 auto", padding: "48px 40px" }}>
+      {/* hero */}
       <div style={{ marginBottom: 48 }}>
+        <div
+          style={{
+            fontSize: 11,
+            letterSpacing: "0.2em",
+            color: "var(--accent-soft)",
+            marginBottom: 12,
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+          }}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              width: 16,
+              height: 1,
+              background: "#e0b8f0",
+            }}
+          />
+          tinytinker.tools
+        </div>
         <h1
           style={{
             fontFamily: "var(--font-mono)",
-            fontSize: 32,
+            fontSize: 36,
             fontWeight: 300,
-            lineHeight: 1.2,
+            lineHeight: 1.15,
             letterSpacing: "-0.03em",
             color: "var(--ink)",
             marginBottom: 14,
@@ -98,20 +119,21 @@ export default function Home() {
         </h1>
         <p
           style={{
-            fontSize: 12,
+            fontSize: 13,
             color: "var(--ink-muted)",
-            maxWidth: 460,
-            lineHeight: 1.75,
+            maxWidth: 420,
+            lineHeight: 1.8,
           }}
         >
-          tiny, focused utilities for makers, engineers, artists, crafters &
-          tinkerers — without leaving your browser.
+          tiny, focused utilities for makers, engineers, artists,
+          <br />
+          crafters & tinkerers — without leaving your browser.
         </p>
       </div>
 
-      {/* Featured */}
+      {/* featured */}
       <div style={{ marginBottom: 44 }}>
-        <div className="section-label" style={{ marginBottom: 12 }}>
+        <div className="section-head" style={{ marginBottom: 14 }}>
           greatest hits
         </div>
         <div
@@ -127,20 +149,20 @@ export default function Home() {
               href={tool.href}
               style={{ textDecoration: "none" }}
             >
-              <div className="tool-card" style={{ padding: "16px 16px 14px" }}>
+              <div className="feat-card" style={{ padding: "16px" }}>
                 <div
                   style={{
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: 500,
                     color: "var(--ink)",
-                    marginBottom: 5,
+                    marginBottom: 6,
                   }}
                 >
                   {tool.label}
                 </div>
                 <div
                   style={{
-                    fontSize: 10,
+                    fontSize: 12,
                     color: "var(--ink-muted)",
                     lineHeight: 1.6,
                   }}
@@ -149,10 +171,9 @@ export default function Home() {
                 </div>
                 <div
                   style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 9,
+                    fontSize: 11,
                     color: "var(--ink-ghost)",
-                    marginTop: 10,
+                    marginTop: 12,
                     letterSpacing: "0.08em",
                   }}
                 >
@@ -164,12 +185,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/* All tools */}
+      {/* all tools */}
       {allTools.map((section) => (
         <div key={section.section} style={{ marginBottom: 36 }}>
-          <div className="section-label" style={{ marginBottom: 12 }}>
-            {section.section}
-          </div>
+          <div className="section-head">{section.section}</div>
           <div
             style={{
               display: "grid",
@@ -183,10 +202,10 @@ export default function Home() {
                 href={tool.href}
                 style={{ textDecoration: "none" }}
               >
-                <div className="tool-card" style={{ padding: "12px 13px" }}>
+                <div className="tool-card" style={{ padding: "12px 14px" }}>
                   <div
                     style={{
-                      fontSize: 11,
+                      fontSize: 13,
                       fontWeight: 500,
                       color: "var(--ink)",
                       marginBottom: 3,
@@ -194,7 +213,7 @@ export default function Home() {
                   >
                     {tool.label}
                   </div>
-                  <div style={{ fontSize: 10, color: "var(--ink-faint)" }}>
+                  <div style={{ fontSize: 12, color: "var(--ink-faint)" }}>
                     {tool.desc}
                   </div>
                 </div>
@@ -204,24 +223,25 @@ export default function Home() {
         </div>
       ))}
 
-      {/* Footer */}
+      {/* footer */}
       <div
         style={{
           marginTop: 60,
-          paddingTop: 20,
-          borderTop: "1px solid var(--border)",
+          paddingTop: 18,
+          borderTop: "1.5px solid var(--border)",
         }}
       >
         <p
           style={{
             fontFamily: "var(--font-mono)",
-            fontSize: 9,
+            fontSize: 11,
             color: "var(--ink-ghost)",
             letterSpacing: "0.06em",
-            lineHeight: 1.8,
+            lineHeight: 2,
           }}
         >
-          no logins. no ads. just tiny tinker tools.
+          tinytinker.tools — made with curiosity ✦<br />
+          no logins. no ads. handmade web tools.
         </p>
       </div>
     </div>
