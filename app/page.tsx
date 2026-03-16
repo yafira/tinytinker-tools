@@ -102,6 +102,16 @@ const allTools = [
       },
     ],
   },
+  {
+    section: "code & dev",
+    tools: [
+      {
+        href: "/tools/code-identifier",
+        label: "code identifier",
+        desc: "detect programming language from a snippet",
+      },
+    ],
+  },
 ];
 
 export default function Home() {
@@ -113,11 +123,12 @@ export default function Home() {
           style={{
             fontSize: 11,
             letterSpacing: "0.2em",
-            color: "var(--accent-soft)",
+            color: "var(--accent)",
             marginBottom: 12,
             display: "flex",
             alignItems: "center",
             gap: 8,
+            fontWeight: 500,
           }}
         >
           <span
@@ -134,7 +145,7 @@ export default function Home() {
           style={{
             fontFamily: "var(--font-mono)",
             fontSize: 36,
-            fontWeight: 300,
+            fontWeight: 400,
             lineHeight: 1.15,
             letterSpacing: "-0.03em",
             color: "var(--ink)",
@@ -143,13 +154,19 @@ export default function Home() {
         >
           tinkerer tools
           <br />
-          <span style={{ color: "var(--accent)", fontStyle: "italic" }}>
+          <span
+            style={{
+              color: "var(--accent)",
+              fontStyle: "italic",
+              fontWeight: 300,
+            }}
+          >
             for people who make things.
           </span>
         </h1>
         <p
           style={{
-            fontSize: 13,
+            fontSize: 14,
             color: "var(--ink-muted)",
             maxWidth: 420,
             lineHeight: 1.8,
@@ -243,7 +260,7 @@ export default function Home() {
                   >
                     {tool.label}
                   </div>
-                  <div style={{ fontSize: 12, color: "var(--ink-faint)" }}>
+                  <div style={{ fontSize: 12, color: "var(--ink-muted)" }}>
                     {tool.desc}
                   </div>
                 </div>

@@ -35,6 +35,10 @@ const nav = [
     label: "measurements",
     items: [{ href: "/tools/unit-converter", label: "unit converter" }],
   },
+  {
+    label: "code & dev",
+    items: [{ href: "/tools/code-identifier", label: "code identifier" }],
+  },
 ];
 
 export default function RootLayout({
@@ -120,7 +124,7 @@ export default function RootLayout({
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: 11,
-                  color: "var(--ink-ghost)",
+                  color: "var(--ink-soft)",
                   marginTop: 3,
                   letterSpacing: "0.1em",
                 }}
@@ -135,17 +139,19 @@ export default function RootLayout({
                 <div key={section.label} style={{ marginBottom: 18 }}>
                   <div
                     style={{
-                      fontSize: 11,
+                      fontSize: 10,
                       letterSpacing: "0.16em",
-                      color: "var(--ink-ghost)",
+                      textTransform: "uppercase",
+                      color: "var(--ink-soft)",
                       padding: "0 6px",
                       marginBottom: 5,
                       display: "flex",
                       alignItems: "center",
                       gap: 4,
+                      fontWeight: 500,
                     }}
                   >
-                    <span style={{ color: "var(--accent-soft)", fontSize: 8 }}>
+                    <span style={{ color: "var(--accent)", fontSize: 8 }}>
                       ✦
                     </span>
                     {section.label}
@@ -159,12 +165,13 @@ export default function RootLayout({
                         className={active ? "nav-link-active" : ""}
                         style={{
                           display: "block",
-                          padding: "5px 6px",
+                          padding: "5px 8px",
                           fontSize: 13,
                           color: active ? "var(--ink)" : "var(--ink-soft)",
                           textDecoration: "none",
                           borderRadius: 5,
                           transition: "all 0.1s",
+                          fontWeight: active ? 500 : 400,
                         }}
                         onMouseEnter={(e) => {
                           if (!active)
@@ -196,7 +203,7 @@ export default function RootLayout({
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: 11,
-                  color: "var(--ink-ghost)",
+                  color: "var(--ink-soft)",
                   lineHeight: 2,
                   letterSpacing: "0.04em",
                 }}
@@ -226,12 +233,7 @@ export default function RootLayout({
           className="theme-toggle"
           onClick={toggleTheme}
           title={dark ? "switch to light" : "switch to dark"}
-          style={{
-            position: "fixed",
-            top: 16,
-            right: 20,
-            zIndex: 100,
-          }}
+          style={{ position: "fixed", top: 16, right: 20, zIndex: 100 }}
         >
           {dark ? "☀︎" : "☽"}
         </button>
