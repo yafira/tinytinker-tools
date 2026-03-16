@@ -20,6 +20,7 @@ const nav = [
       { href: "/tools/cutup", label: "cut-up machine" },
       { href: "/tools/glitch-text", label: "glitch text" },
       { href: "/tools/zine-filler", label: "zine filler" },
+      { href: "/tools/ascii", label: "ascii generator" },
     ],
   },
   {

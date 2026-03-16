@@ -8,22 +8,22 @@ const featured = [
     category: "electronics",
   },
   {
-    href: "/tools/ohms-law",
-    label: "ohm's law calc",
-    desc: "solve for V, I, R, or P — includes LED resistor calculator.",
-    category: "electronics",
+    href: "/tools/ascii",
+    label: "ascii generator",
+    desc: "big text, image to ascii, and pattern generator.",
+    category: "generative text",
   },
   {
     href: "/tools/palette",
-    label: "color palette",
+    label: "color palette gen",
     desc: "generate harmonious palettes from any seed color.",
-    category: "generators",
+    category: "color & design",
   },
 ];
 
 const allTools = [
   {
-    section: "electronics & circuits",
+    section: "electronics",
     tools: [
       {
         href: "/tools/resistor",
@@ -43,7 +43,37 @@ const allTools = [
     ],
   },
   {
-    section: "generators",
+    section: "generative text",
+    tools: [
+      {
+        href: "/tools/markov",
+        label: "markov generator",
+        desc: "generate text from any corpus",
+      },
+      {
+        href: "/tools/cutup",
+        label: "cut-up machine",
+        desc: "burroughs-style text reassembly",
+      },
+      {
+        href: "/tools/glitch-text",
+        label: "glitch text",
+        desc: "zalgo, wide, morse, binary & more",
+      },
+      {
+        href: "/tools/zine-filler",
+        label: "zine filler",
+        desc: "placeholder text in 5 flavors",
+      },
+      {
+        href: "/tools/ascii",
+        label: "ascii generator",
+        desc: "big text, image → ascii, patterns",
+      },
+    ],
+  },
+  {
+    section: "color & design",
     tools: [
       {
         href: "/tools/palette",
@@ -95,7 +125,7 @@ export default function Home() {
               display: "inline-block",
               width: 16,
               height: 1,
-              background: "#e0b8f0",
+              background: "var(--border-hover)",
             }}
           />
           tinytinker.tools
@@ -111,7 +141,7 @@ export default function Home() {
             marginBottom: 14,
           }}
         >
-          tiny tinker tools
+          tinkerer tools
           <br />
           <span style={{ color: "var(--accent)", fontStyle: "italic" }}>
             for people who make things.
@@ -125,8 +155,9 @@ export default function Home() {
             lineHeight: 1.8,
           }}
         >
-          a creative web toolbox of tiny utilities for makers, engineers,
-          artists, crafters, and tinkerers — right in your browser.
+          tiny, focused utilities for makers, engineers, artists,
+          <br />
+          crafters & tinkerers — without leaving your browser.
         </p>
       </div>
 
