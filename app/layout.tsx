@@ -11,6 +11,7 @@ const nav = [
       { href: "/tools/resistor", label: "resistor decoder" },
       { href: "/tools/ohms-law", label: "ohm's law calc" },
       { href: "/tools/wire-gauge", label: "wire gauge ref" },
+      { href: "/tools/capacitor", label: "capacitor decoder" },
     ],
   },
   {
@@ -25,7 +26,13 @@ const nav = [
   },
   {
     label: "color & design",
-    items: [{ href: "/tools/palette", label: "color palette gen" }],
+    items: [
+      { href: "/tools/palette", label: "color palette gen" },
+      { href: "/tools/color-converter", label: "color converter" },
+      { href: "/tools/hex-name", label: "hex color namer" },
+      { href: "/tools/color-cheatsheet", label: "color cheatsheet" },
+      { href: "/tools/accessibility", label: "accessibility checker" },
+    ],
   },
   {
     label: "print & zine",
@@ -37,7 +44,11 @@ const nav = [
   },
   {
     label: "code & dev",
-    items: [{ href: "/tools/code-identifier", label: "code identifier" }],
+    items: [
+      { href: "/tools/code-identifier", label: "code identifier" },
+      { href: "/tools/binary-converter", label: "binary / hex converter" },
+      { href: "/tools/regex-tester", label: "regex tester" },
+    ],
   },
 ];
 
@@ -86,7 +97,7 @@ export default function RootLayout({
           {/* sidebar */}
           <aside
             style={{
-              width: 210,
+              width: 220,
               flexShrink: 0,
               borderRight: "1.5px solid var(--border)",
               background: "var(--bg-sidebar)",

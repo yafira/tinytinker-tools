@@ -14,9 +14,9 @@ const featured = [
     category: "generative text",
   },
   {
-    href: "/tools/palette",
-    label: "color palette gen",
-    desc: "generate harmonious palettes from any seed color.",
+    href: "/tools/accessibility",
+    label: "accessibility checker",
+    desc: "contrast, color blindness simulator & readable text suggester.",
     category: "color & design",
   },
 ];
@@ -39,6 +39,11 @@ const allTools = [
         href: "/tools/wire-gauge",
         label: "wire gauge reference",
         desc: "AWG ↔ mm², ampacity, resistance",
+      },
+      {
+        href: "/tools/capacitor",
+        label: "capacitor decoder",
+        desc: "capacitor code → value",
       },
     ],
   },
@@ -80,6 +85,26 @@ const allTools = [
         label: "color palette gen",
         desc: "harmonious palettes from any seed color",
       },
+      {
+        href: "/tools/color-converter",
+        label: "color converter",
+        desc: "hex ↔ rgb ↔ hsl ↔ oklch",
+      },
+      {
+        href: "/tools/hex-name",
+        label: "hex color namer",
+        desc: "give any hex a poetic name",
+      },
+      {
+        href: "/tools/color-cheatsheet",
+        label: "color cheatsheet",
+        desc: "quick reference for color codes",
+      },
+      {
+        href: "/tools/accessibility",
+        label: "accessibility checker",
+        desc: "contrast, color blindness & more",
+      },
     ],
   },
   {
@@ -109,6 +134,16 @@ const allTools = [
         href: "/tools/code-identifier",
         label: "code identifier",
         desc: "detect programming language from a snippet",
+      },
+      {
+        href: "/tools/binary-converter",
+        label: "binary / hex converter",
+        desc: "text & numbers → binary, hex, octal",
+      },
+      {
+        href: "/tools/regex-tester",
+        label: "regex tester",
+        desc: "test regex patterns live",
       },
     ],
   },
