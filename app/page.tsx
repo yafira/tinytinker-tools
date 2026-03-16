@@ -15,7 +15,7 @@ const featured = [
   },
   {
     href: "/tools/palette",
-    label: "color palette gen",
+    label: "color palette",
     desc: "generate harmonious palettes from any seed color.",
     category: "generators",
   },
