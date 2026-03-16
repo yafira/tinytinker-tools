@@ -14,7 +14,16 @@ const nav = [
     ],
   },
   {
-    label: "generators",
+    label: "generative text",
+    items: [
+      { href: "/tools/markov", label: "markov generator" },
+      { href: "/tools/cutup", label: "cut-up machine" },
+      { href: "/tools/glitch-text", label: "glitch text" },
+      { href: "/tools/zine-filler", label: "zine filler" },
+    ],
+  },
+  {
+    label: "color & design",
     items: [{ href: "/tools/palette", label: "color palette gen" }],
   },
   {
