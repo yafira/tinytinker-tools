@@ -111,7 +111,7 @@ export default function Home() {
             marginBottom: 14,
           }}
         >
-          tinkerer tools
+          tiny tinker tools
           <br />
           <span style={{ color: "var(--accent)", fontStyle: "italic" }}>
             for people who make things.
@@ -125,8 +125,8 @@ export default function Home() {
             lineHeight: 1.8,
           }}
         >
-          tiny, focused utilities for makers, engineers, artists, crafters &
-          tinkerers — without leaving your browser.
+          a creative web toolbox of tiny utilities for makers, engineers,
+          artists, crafters, and tinkerers — right in your browser.
         </p>
       </div>
 
