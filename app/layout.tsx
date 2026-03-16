@@ -7,7 +7,7 @@ const nav = [
   {
     label: "Electronics",
     items: [
-      { href: "/tools/resistor", label: "Resistor decoder", badge: "popular" },
+      { href: "/tools/resistor", label: "Resistor decoder" },
       { href: "/tools/ohms-law", label: "Ohm's law calc" },
       { href: "/tools/wire-gauge", label: "Wire gauge ref" },
     ],
@@ -18,9 +18,7 @@ const nav = [
   },
   {
     label: "Print & Zine",
-    items: [
-      { href: "/tools/zine-imposer", label: "Zine imposer", badge: "new" },
-    ],
+    items: [{ href: "/tools/zine-imposer", label: "Zine imposer" }],
   },
   {
     label: "Measurements",
@@ -41,7 +39,7 @@ export default function RootLayout({
         <title>tinytinker.tools</title>
         <meta
           name="description"
-          content="A handmade toolbox for makers, artists, engineers & tinkerers."
+          content="Tinkerer tools for people who make things."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
@@ -51,12 +49,13 @@ export default function RootLayout({
       </head>
       <body>
         <div style={{ display: "flex", minHeight: "100vh" }}>
+          {/* Sidebar */}
           <aside
             style={{
-              width: 210,
+              width: 200,
               flexShrink: 0,
-              borderRight: "1px solid #dbd7ce",
-              background: "#f5f3ee",
+              borderRight: "1px solid var(--border)",
+              background: "var(--bg-sidebar)",
               display: "flex",
               flexDirection: "column",
               position: "sticky",
@@ -65,45 +64,54 @@ export default function RootLayout({
               overflowY: "auto",
             }}
           >
+            {/* Logo */}
             <Link
               href="/"
               style={{
                 textDecoration: "none",
                 display: "block",
-                padding: "22px 18px 18px",
-                borderBottom: "1px solid #dbd7ce",
+                padding: "20px 16px 16px",
+                borderBottom: "1px solid var(--border)",
               }}
             >
               <div
                 style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: 17,
-                  fontWeight: 300,
-                  color: "#1a1917",
-                  letterSpacing: "-0.01em",
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 13,
+                  fontWeight: 500,
+                  color: "var(--ink)",
+                  letterSpacing: "-0.02em",
                 }}
               >
-                tinytinker<span style={{ color: "#e84c1e" }}>.</span>tools
+                tinytinker<span style={{ color: "var(--accent)" }}>.</span>tools
               </div>
               <div
                 style={{
                   fontFamily: "var(--font-mono)",
-                  fontSize: 10,
-                  color: "#7a7870",
+                  fontSize: 9,
+                  color: "var(--ink-faint)",
                   marginTop: 3,
-                  letterSpacing: "0.06em",
+                  letterSpacing: "0.12em",
                 }}
               >
-                HANDMADE TOOLBOX
+                handmade toolbox
               </div>
             </Link>
 
-            <nav style={{ flex: 1, padding: "14px 10px" }}>
+            {/* Nav */}
+            <nav style={{ flex: 1, padding: "12px 8px" }}>
               {nav.map((section) => (
-                <div key={section.label} style={{ marginBottom: 20 }}>
+                <div key={section.label} style={{ marginBottom: 18 }}>
                   <div
-                    className="section-label"
-                    style={{ padding: "0 8px", marginBottom: 6 }}
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 9,
+                      color: "var(--ink-faint)",
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      padding: "0 8px",
+                      marginBottom: 5,
+                    }}
                   >
                     {section.label}
                   </div>
@@ -117,33 +125,25 @@ export default function RootLayout({
                         style={{
                           display: "flex",
                           alignItems: "center",
-                          justifyContent: "space-between",
                           padding: "5px 8px",
-                          fontSize: 13,
-                          color: active ? "#e84c1e" : "#3d3b35",
+                          fontSize: 11,
+                          color: active ? "var(--ink)" : "var(--ink-soft)",
                           textDecoration: "none",
-                          borderRadius: 4,
+                          borderRadius: 6,
                           transition: "all 0.1s",
                         }}
                         onMouseEnter={(e) => {
-                          if (!active) {
+                          if (!active)
                             (e.currentTarget as HTMLElement).style.background =
-                              "#ede9e0";
-                          }
+                              "var(--card-hover)";
                         }}
                         onMouseLeave={(e) => {
-                          if (!active) {
+                          if (!active)
                             (e.currentTarget as HTMLElement).style.background =
                               "transparent";
-                          }
                         }}
                       >
-                        <span>{item.label}</span>
-                        {item.badge && (
-                          <span className={`badge badge-${item.badge}`}>
-                            {item.badge}
-                          </span>
-                        )}
+                        {item.label}
                       </Link>
                     );
                   })}
@@ -151,25 +151,29 @@ export default function RootLayout({
               ))}
             </nav>
 
+            {/* Footer */}
             <div
-              style={{ padding: "14px 18px", borderTop: "1px solid #dbd7ce" }}
+              style={{
+                padding: "12px 16px",
+                borderTop: "1px solid var(--border)",
+              }}
             >
               <div
                 style={{
                   fontFamily: "var(--font-mono)",
-                  fontSize: 10,
-                  color: "#b8b6b0",
-                  lineHeight: 1.7,
+                  fontSize: 9,
+                  color: "var(--ink-ghost)",
+                  lineHeight: 1.9,
+                  letterSpacing: "0.04em",
                 }}
               >
-                No logins. No tracking.
-                <br />
-                Long live the handmade web.
+                handmade web tools.
               </div>
             </div>
           </aside>
 
-          <main style={{ flex: 1, minWidth: 0, background: "#f5f3ee" }}>
+          {/* Main */}
+          <main style={{ flex: 1, minWidth: 0, background: "var(--bg)" }}>
             {children}
           </main>
         </div>
