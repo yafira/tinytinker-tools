@@ -42,6 +42,11 @@
   --rainbow: linear-gradient(90deg, #8040b0, #4060c0, #408080);
 }
 
+/* flower mascot dark mode */
+[data-theme="dark"] .mascot {
+  filter: brightness(0.85) saturate(0.9);
+}
+
 * {
   box-sizing: border-box;
 }
