@@ -8,74 +8,46 @@ const nav = [
   {
     label: "electronics",
     items: [
-      { href: "/tools/resistor", label: "resistor decoder", tag: "decode" },
-      { href: "/tools/ohms-law", label: "ohm's law", tag: "calc" },
-      { href: "/tools/wire-gauge", label: "wire gauge ref", tag: "ref" },
-      { href: "/tools/capacitor", label: "capacitor decoder", tag: "decode" },
+      { href: "/tools/resistor", label: "resistor decoder" },
+      { href: "/tools/ohms-law", label: "ohm's law" },
+      { href: "/tools/wire-gauge", label: "wire gauge ref" },
+      { href: "/tools/capacitor", label: "capacitor decoder" },
     ],
   },
   {
     label: "generative text",
     items: [
-      { href: "/tools/markov", label: "markov generator", tag: "gen" },
-      { href: "/tools/cutup", label: "cut-up machine", tag: "gen" },
-      { href: "/tools/glitch-text", label: "glitch text", tag: "gen" },
-      { href: "/tools/zine-filler", label: "zine filler", tag: "gen" },
-      { href: "/tools/ascii", label: "ascii generator", tag: "gen" },
+      { href: "/tools/markov", label: "markov generator" },
+      { href: "/tools/cutup", label: "cut-up machine" },
+      { href: "/tools/glitch-text", label: "glitch text" },
+      { href: "/tools/zine-filler", label: "zine filler" },
+      { href: "/tools/ascii", label: "ascii generator" },
     ],
   },
   {
     label: "color & design",
     items: [
-      { href: "/tools/palette", label: "color palette", tag: "gen" },
-      {
-        href: "/tools/color-converter",
-        label: "color converter",
-        tag: "convert",
-      },
-      { href: "/tools/hex-name", label: "hex color namer", tag: "decode" },
-      {
-        href: "/tools/color-cheatsheet",
-        label: "color cheatsheet",
-        tag: "ref",
-      },
-      {
-        href: "/tools/accessibility",
-        label: "accessibility checker",
-        tag: "test",
-      },
+      { href: "/tools/palette", label: "color palette" },
+      { href: "/tools/color-converter", label: "color converter" },
+      { href: "/tools/hex-name", label: "hex color namer" },
+      { href: "/tools/color-cheatsheet", label: "color cheatsheet" },
+      { href: "/tools/accessibility", label: "accessibility checker" },
     ],
   },
   {
     label: "print & zine",
-    items: [
-      { href: "/tools/zine-imposer", label: "zine imposer", tag: "plan" },
-    ],
+    items: [{ href: "/tools/zine-imposer", label: "zine imposer" }],
   },
   {
     label: "measurements",
-    items: [
-      {
-        href: "/tools/unit-converter",
-        label: "unit converter",
-        tag: "convert",
-      },
-    ],
+    items: [{ href: "/tools/unit-converter", label: "unit converter" }],
   },
   {
     label: "code & dev",
     items: [
-      {
-        href: "/tools/code-identifier",
-        label: "code identifier",
-        tag: "decode",
-      },
-      {
-        href: "/tools/binary-converter",
-        label: "binary / hex",
-        tag: "convert",
-      },
-      { href: "/tools/regex-tester", label: "regex tester", tag: "test" },
+      { href: "/tools/code-identifier", label: "code identifier" },
+      { href: "/tools/binary-converter", label: "binary / hex" },
+      { href: "/tools/regex-tester", label: "regex tester" },
     ],
   },
 ];
@@ -201,9 +173,7 @@ export default function RootLayout({
                         href={item.href}
                         className={active ? "nav-link-active" : ""}
                         style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
+                          display: "block",
                           padding: "5px 8px",
                           fontSize: 13,
                           color: active ? "var(--ink)" : "var(--ink-soft)",
@@ -223,10 +193,7 @@ export default function RootLayout({
                               "transparent";
                         }}
                       >
-                        <span>{item.label}</span>
-                        <span className={`tag tag-${item.tag}`}>
-                          {item.tag}
-                        </span>
+                        {item.label}
                       </Link>
                     );
                   })}
