@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FeaturedTools from "@/components/FeaturedTools";
 
 const featured = [
   {
@@ -261,67 +262,7 @@ export default function Home() {
       </div>
 
       {/* featured */}
-      <div style={{ marginBottom: 48 }}>
-        <div className="section-head" style={{ marginBottom: 16 }}>
-          greatest hits
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 14,
-          }}
-        >
-          {featured.map((tool) => (
-            <Link
-              key={tool.href}
-              href={tool.href}
-              style={{ textDecoration: "none" }}
-            >
-              <div className="feat-card" style={{ padding: "20px" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    marginBottom: 8,
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: 16,
-                      fontWeight: 500,
-                      color: "var(--ink)",
-                    }}
-                  >
-                    {tool.label}
-                  </div>
-                  <span className={`tag tag-${tool.tag}`}>{tool.tag}</span>
-                </div>
-                <div
-                  style={{
-                    fontSize: 13,
-                    color: "var(--ink-muted)",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  {tool.desc}
-                </div>
-                <div
-                  style={{
-                    fontSize: 11,
-                    color: "var(--ink-ghost)",
-                    marginTop: 14,
-                    letterSpacing: "0.08em",
-                  }}
-                >
-                  {tool.category}
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
+      <FeaturedTools />
 
       {/* all tools */}
       {allTools.map((section) => (
