@@ -215,8 +215,9 @@ export default function Home() {
               lineHeight: 1.8,
             }}
           >
-            tiny, focused utilities for makers, engineers, artists, crafters &
-            tinkerers — without leaving your browser.
+            tiny, focused utilities for makers, engineers, artists,
+            <br />
+            crafters & tinkerers — without leaving your browser.
           </p>
         </div>
 
@@ -329,28 +330,6 @@ export default function Home() {
           </div>
         </div>
       ))}
-
-      {/* footer */}
-      <div
-        style={{
-          marginTop: 60,
-          paddingTop: 18,
-          borderTop: "1.5px solid var(--border)",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 11,
-            color: "var(--ink-ghost)",
-            letterSpacing: "0.06em",
-            lineHeight: 2,
-          }}
-        >
-          tinytinker.tools — made with curiosity ✦<br />
-          no logins. no ads. handmade web tools.
-        </p>
-      </div>
     </div>
   );
 }
