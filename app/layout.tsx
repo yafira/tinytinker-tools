@@ -12,6 +12,7 @@ const nav = [
       { href: "/tools/ohms-law", label: "ohm's law" },
       { href: "/tools/wire-gauge", label: "wire gauge ref" },
       { href: "/tools/capacitor", label: "capacitor decoder" },
+      { href: "/tools/555-timer", label: "555 timer", tag: "calc" },
     ],
   },
   {

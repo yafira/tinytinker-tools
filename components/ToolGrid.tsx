@@ -41,6 +41,12 @@ const allTools = [
         desc: "capacitor code → value",
         tag: "decode",
       },
+      {
+        href: "/tools/555-timer",
+        label: "555 timer",
+        desc: "astable & monostable frequency calculator",
+        tag: "calc",
+      },
     ],
   },
   {
