@@ -1,36 +1,167 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# tinytinker✦tools
 
-## Getting Started
+**a soft toolkit for curious makers.**
 
-First, run the development server:
+tiny, focused utilities for makers, engineers, artists, crafters, creative technologists, tinkerers & you — without leaving your browser.
+
+→ **[tinytinker.tools](https://tinytinker.tools)**
+
+---
+
+![a soft toolkit for curious makers](public/flower.png)
+
+---
+
+## current tools available:
+
+### electronics
+
+| tool                 | description                                          |
+| -------------------- | ---------------------------------------------------- |
+| resistor decoder     | color band → resistance value + tolerance            |
+| ohm's law calc       | solve for V, I, R, or P — includes LED resistor calc |
+| wire gauge reference | AWG ↔ mm², ampacity, resistance per km               |
+| capacitor decoder    | 2-digit, 3-digit, EIA-198 codes → value              |
+| 555 timer calculator | astable & monostable frequency + timing              |
+| voltage divider      | solve for Vout, R1, R2, or Vin                       |
+
+### generative text
+
+| tool             | description                                |
+| ---------------- | ------------------------------------------ |
+| markov generator | train on any corpus, generate new text     |
+| cut-up machine   | burroughs-style text reassembly            |
+| glitch text      | zalgo, wide, mirror, morse, binary & more  |
+| zine filler      | placeholder text in 5 flavors              |
+| ascii generator  | big text, image → ascii, pattern generator |
+
+### color & design
+
+| tool                  | description                                              |
+| --------------------- | -------------------------------------------------------- |
+| color palette gen     | 6 harmony modes, click to copy                           |
+| color converter       | hex ↔ rgb ↔ hsl ↔ hsv ↔ oklch ↔ cmyk                     |
+| hex color namer       | poetic name + nearest css color name                     |
+| color cheatsheet      | css, tailwind, material, pastel, neon, earth             |
+| accessibility checker | contrast ratio, color blindness simulator, readable text |
+
+### print & zine
+
+| tool         | description                                  |
+| ------------ | -------------------------------------------- |
+| zine imposer | 8-page mini-zine fold layout + folding guide |
+
+### measurements
+
+| tool           | description                                               |
+| -------------- | --------------------------------------------------------- |
+| unit converter | length, weight, temp, fabric, data, wire, pressure, speed |
+
+### code & dev
+
+| tool                   | description                                   |
+| ---------------------- | --------------------------------------------- |
+| code identifier        | pattern matching for 41 programming languages |
+| binary / hex converter | text & numbers → binary, hex, octal, decimal  |
+| regex tester           | live highlighting, named groups, replace mode |
+
+---
+
+## stack
+
+- **[next.js 14](https://nextjs.org)** — app router
+- **[tailwind css](https://tailwindcss.com)** — utility classes
+- **100% client-side** — no backend, no database, no api keys. nothing leaves your browser.
+
+---
+
+## running locally
 
 ```bash
+git clone https://github.com/YOUR_USERNAME/tinytinker-tools
+cd tinytinker-tools
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+open [http://localhost:3000](http://localhost:3000) ✦
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## adding a tool
 
-## Learn More
+<i>tbd.</i>
 
-To learn more about Next.js, take a look at the following resources:
+### tool tags
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| tag         | means                        |
+| ----------- | ---------------------------- |
+| `[calc]`    | computes a value from inputs |
+| `[gen]`     | generates content            |
+| `[ref]`     | lookup / reference table     |
+| `[decode]`  | decodes a code or format     |
+| `[convert]` | converts between formats     |
+| `[test]`    | lets you test something live |
+| `[plan]`    | helps you plan or design     |
+| `[guide]`   | educational reference        |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### design system
 
-## Deploy on Vercel
+the design lives in css variables in `app/globals.css`. key tokens:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```css
+--bg: #fdf8ff; /* main background */
+--bg-sidebar: #e8e0f5; /* sidebar */
+--accent: #6030a8; /* purple accent */
+--border: #c8b8e8; /* borders */
+--ink: #0f0820; /* primary text */
+--font-mono: "IBM Plex Mono", monospace;
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+dark mode is handled via `[data-theme="dark"]` on the html element.
+
+please keep the aesthetic: monospace, lavender, warm, soft, handmade. ✦
+
+---
+
+## project structure
+
+```
+tinytinker/
+├── app/
+│   ├── layout.tsx              ← sidebar, nav, dark mode, mobile menu
+│   ├── page.tsx                ← homepage
+│   ├── globals.css             ← design tokens + global styles
+│   └── tools/
+│       ├── resistor/page.tsx   ← each tool is one file
+│       ├── ohms-law/page.tsx
+│       └── ...
+├── components/
+│   ├── ToolPage.tsx            ← shared wrapper (breadcrumb + header)
+│   ├── FeaturedTools.tsx       ← random featured section
+│   └── ToolGrid.tsx            ← filterable tool grid
+└── public/
+    └── flower.png              ← our mascot ✦
+```
+
+---
+
+## contributing
+
+<i>tbd.</i>
+
+---
+
+## license
+
+<i>tbd.</i>
+
+---
+
+## crafted by
+
+**[yafira](https://yafira.xyz)** · [electrocute.io](https://electrocute.io) · [@electrocutelab](https://instagram.com/electrocutelab)
+
+itp graduate student, nyu · design engineer & creative technologist · may 2026
+
+_made with curiosity. no logins. no ads. handmade web tools._
