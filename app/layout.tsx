@@ -18,6 +18,16 @@ const nav = [
     ],
   },
   {
+    label: "code & dev",
+    items: [
+      { href: "/tools/json-formatter", label: "json formatter" },
+      { href: "/tools/timestamp-converter", label: "timestamp converter" },
+      { href: "/tools/code-identifier", label: "code identifier" },
+      { href: "/tools/binary-converter", label: "binary / hex" },
+      { href: "/tools/regex-tester", label: "regex tester" },
+    ],
+  },
+  {
     label: "generative text",
     items: [
       { href: "/tools/markov", label: "markov generator" },
@@ -44,16 +54,6 @@ const nav = [
   {
     label: "measurements",
     items: [{ href: "/tools/unit-converter", label: "unit converter" }],
-  },
-  {
-    label: "code & dev",
-    items: [
-      { href: "/tools/json-formatter", label: "json formatter" },
-      { href: "/tools/timestamp-converter", label: "timestamp converter" },
-      { href: "/tools/code-identifier", label: "code identifier" },
-      { href: "/tools/binary-converter", label: "binary / hex" },
-      { href: "/tools/regex-tester", label: "regex tester" },
-    ],
   },
 ];
 
