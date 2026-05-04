@@ -151,6 +151,12 @@ const allTools = [
         tag: "convert",
       },
       {
+        href: "/tools/timestamp-converter",
+        label: "timestamp converter",
+        desc: "unix timestamps ↔ human readable dates",
+        tag: "convert",
+      },
+      {
         href: "/tools/code-identifier",
         label: "code identifier",
         desc: "detect programming language from a snippet",

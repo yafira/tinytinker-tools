@@ -153,6 +153,13 @@ const ALL_TOOLS = [
     category: "code & dev",
     tag: "convert",
   },
+  {
+    href: "/tools/timestamp-converter",
+    label: "timestamp converter",
+    desc: "unix timestamps ↔ human readable dates",
+    category: "code & dev",
+    tag: "convert",
+  },
 ];
 
 function shuffle<T>(arr: T[]): T[] {
