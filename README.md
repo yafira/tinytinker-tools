@@ -12,6 +12,19 @@ tiny, focused utilities for makers, engineers, artists, crafters, creative techn
 
 ---
 
+## screenshots
+
+![tinytinker.tools homepage](public/screenshots/homepage.png)
+
+|                                                      |                                                  |                                                                |
+| ---------------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------- |
+| ![resistor decoder](public/screenshots/resistor.png) | ![color palette](public/screenshots/palette.png) | ![accessibility checker](public/screenshots/accessibility.png) |
+| resistor decoder                                     | color palette gen                                | accessibility checker                                          |
+| ![markov generator](public/screenshots/markov.png)   | ![json formatter](public/screenshots/json.png)   | ![glitch text](public/screenshots/glitch.png)                  |
+| markov generator                                     | json formatter                                   | glitch text                                                    |
+
+---
+
 ## current tools
 
 ### electronics
@@ -24,6 +37,16 @@ tiny, focused utilities for makers, engineers, artists, crafters, creative techn
 | capacitor decoder    | 2-digit, 3-digit, EIA-198 codes → value              |
 | 555 timer calculator | astable & monostable frequency + timing              |
 | voltage divider      | solve for Vout, R1, R2, or Vin                       |
+
+### code & dev
+
+| tool                   | description                                   |
+| ---------------------- | --------------------------------------------- |
+| code identifier        | pattern matching for 41 programming languages |
+| binary / hex converter | text & numbers → binary, hex, octal, decimal  |
+| regex tester           | live highlighting, named groups, replace mode |
+| json formatter         | format, validate and minify json              |
+| timestamp converter    | unix timestamps ↔ human readable dates        |
 
 ### generative text
 
@@ -57,20 +80,13 @@ tiny, focused utilities for makers, engineers, artists, crafters, creative techn
 | -------------- | --------------------------------------------------------- |
 | unit converter | length, weight, temp, fabric, data, wire, pressure, speed |
 
-### code & dev
-
-| tool                   | description                                   |
-| ---------------------- | --------------------------------------------- |
-| code identifier        | pattern matching for 41 programming languages |
-| binary / hex converter | text & numbers → binary, hex, octal, decimal  |
-| regex tester           | live highlighting, named groups, replace mode |
-
 ---
 
 ## stack
 
 - **[next.js 14](https://nextjs.org)** — app router
 - **[tailwind css](https://tailwindcss.com)** — utility classes
+- **[ibm plex mono](https://fonts.google.com/specimen/IBM+Plex+Mono)** — the only font you need
 - **100% client-side** — no backend, no database, no api keys. nothing leaves your browser.
 
 ---
@@ -151,7 +167,8 @@ tinytinker/
 │   ├── ToolGrid.tsx            ← filterable tool grid
 │   └── GitHubStars.tsx         ← live star count
 └── public/
-    └── flower.png              ← our mascot ✦
+    ├── flower.png              ← our mascot ✦
+    └── screenshots/            ← readme screenshots
 ```
 
 ---
@@ -176,6 +193,6 @@ copyright (c) 2026 Yafira Martinez (electrocute)
 
 **[yafira](https://yafira.xyz)** · [electrocute.io](https://electrocute.io) · [@electrocutelab](https://instagram.com/electrocutelab)
 
-nyu itp graduate student, nyu · design engineer & creative technologist · may 2026
+nyu itp · design engineer & creative technologist · may 2026
 
 _made with curiosity. no logins. no ads. handmade web tools._
