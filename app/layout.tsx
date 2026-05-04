@@ -48,6 +48,7 @@ const nav = [
   {
     label: "code & dev",
     items: [
+      { href: "/tools/json-formatter", label: "json formatter" },
       { href: "/tools/code-identifier", label: "code identifier" },
       { href: "/tools/binary-converter", label: "binary / hex" },
       { href: "/tools/regex-tester", label: "regex tester" },

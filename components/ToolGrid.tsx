@@ -145,6 +145,12 @@ const allTools = [
     section: "code & dev",
     tools: [
       {
+        href: "/tools/json-formatter",
+        label: "json formatter",
+        desc: "format, validate and minify json",
+        tag: "convert",
+      },
+      {
         href: "/tools/code-identifier",
         label: "code identifier",
         desc: "detect programming language from a snippet",

@@ -146,6 +146,13 @@ const ALL_TOOLS = [
     category: "code & dev",
     tag: "test",
   },
+  {
+    href: "/tools/json-formatter",
+    label: "json formatter",
+    desc: "format, validate and minify json",
+    category: "code & dev",
+    tag: "convert",
+  },
 ];
 
 function shuffle<T>(arr: T[]): T[] {
