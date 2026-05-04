@@ -71,12 +71,10 @@ export default function RootLayout({
     }
   }, []);
 
-  /* close menu on route change */
   useEffect(() => {
     setMenuOpen(false);
   }, [path]);
 
-  /* prevent body scroll when menu open */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -205,6 +203,20 @@ export default function RootLayout({
           <br />
           handmade web tools.
         </div>
+        <Link
+          href="/request"
+          style={{
+            display: "inline-block",
+            marginTop: 10,
+            fontFamily: "var(--font-mono)",
+            fontSize: 11,
+            color: "var(--accent)",
+            textDecoration: "none",
+            letterSpacing: "0.04em",
+          }}
+        >
+          ✦ request a tool
+        </Link>
       </div>
     </>
   );

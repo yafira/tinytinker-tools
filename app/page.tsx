@@ -12,6 +12,7 @@ export default function Home() {
           display: "flex",
           alignItems: "center",
           gap: 40,
+          flexWrap: "wrap",
         }}
       >
         <div style={{ flex: 1, minWidth: 260 }}>
@@ -69,8 +70,7 @@ export default function Home() {
             }}
           >
             tiny, focused utilities for makers, engineers, artists, crafters,
-            tinkerers, for you & curious minds everywhere — without leaving your
-            browser.
+            tinkerers & you — without leaving your browser.
           </p>
         </div>
 
@@ -90,6 +90,31 @@ export default function Home() {
             }}
           />
         </div>
+      </div>
+
+      {/* request a tool */}
+      <div
+        style={{
+          marginBottom: 32,
+          display: "flex",
+          alignItems: "center",
+          gap: 12,
+        }}
+      >
+        <Link href="/request" style={{ textDecoration: "none" }}>
+          <button className="btn btn-ghost" style={{ fontSize: 13 }}>
+            ✦ request a tool
+          </button>
+        </Link>
+        <span
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: 12,
+            color: "var(--ink-ghost)",
+          }}
+        >
+          missing something? suggest it and help build the toolkit.
+        </span>
       </div>
 
       {/* featured — random on each load */}
