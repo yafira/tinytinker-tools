@@ -8,10 +8,6 @@ tiny, focused utilities for makers, engineers, artists, crafters, creative techn
 
 ---
 
-![a soft toolkit for curious makers](public/flower.png)
-
----
-
 ## screenshots
 
 ![tinytinker.tools homepage](public/screenshots/homepage.png)
