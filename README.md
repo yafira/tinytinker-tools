@@ -12,7 +12,7 @@ tiny, focused utilities for makers, engineers, artists, crafters, creative techn
 
 ---
 
-## current tools available:
+## current tools
 
 ### electronics
 
@@ -78,7 +78,7 @@ tiny, focused utilities for makers, engineers, artists, crafters, creative techn
 ## running locally
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/tinytinker-tools
+git clone https://github.com/yafira/tinytinker-tools
 cd tinytinker-tools
 npm install
 npm run dev
@@ -90,20 +90,29 @@ open [http://localhost:3000](http://localhost:3000) ✦
 
 ## adding a tool
 
-<i>tbd.</i>
+each tool is a single self-contained file. to add one:
+
+1. create a folder `app/tools/your-tool-name/`
+2. add `page.tsx` inside it — use `components/ToolPage.tsx` as the wrapper
+3. add it to the nav in `app/layout.tsx`
+4. add it to the grid in `components/ToolGrid.tsx` with a tag
+5. add it to `components/FeaturedTools.tsx`
+6. open a pull request
+
+see [CONTRIBUTING.md](./CONTRIBUTING.md) for the full guide.
 
 ### tool tags
 
-| tag         | means                        |
-| ----------- | ---------------------------- |
-| `[calc]`    | computes a value from inputs |
-| `[gen]`     | generates content            |
-| `[ref]`     | lookup / reference table     |
-| `[decode]`  | decodes a code or format     |
-| `[convert]` | converts between formats     |
-| `[test]`    | lets you test something live |
-| `[plan]`    | helps you plan or design     |
-| `[guide]`   | educational reference        |
+| tag       | means                        |
+| --------- | ---------------------------- |
+| `calc`    | computes a value from inputs |
+| `gen`     | generates content            |
+| `ref`     | lookup / reference table     |
+| `decode`  | decodes a code or format     |
+| `convert` | converts between formats     |
+| `test`    | lets you test something live |
+| `plan`    | helps you plan or design     |
+| `guide`   | educational reference        |
 
 ### design system
 
@@ -139,7 +148,8 @@ tinytinker/
 ├── components/
 │   ├── ToolPage.tsx            ← shared wrapper (breadcrumb + header)
 │   ├── FeaturedTools.tsx       ← random featured section
-│   └── ToolGrid.tsx            ← filterable tool grid
+│   ├── ToolGrid.tsx            ← filterable tool grid
+│   └── GitHubStars.tsx         ← live star count
 └── public/
     └── flower.png              ← our mascot ✦
 ```
@@ -148,13 +158,17 @@ tinytinker/
 
 ## contributing
 
-<i>tbd.</i>
+contributions are welcome! if you want to add a tool, fix a bug, or improve the docs, please read [CONTRIBUTING.md](./CONTRIBUTING.md) first.
+
+if you have an idea but do not want to build it yourself, use the [tool request form](https://tinytinker.tools/request) or open an issue using the tool request template.
 
 ---
 
 ## license
 
-<i>tbd.</i>
+[MIT](./LICENSE) — free to use, modify, and distribute with attribution.
+
+copyright (c) 2026 Yafira Martinez (electrocute)
 
 ---
 
@@ -162,6 +176,6 @@ tinytinker/
 
 **[yafira](https://yafira.xyz)** · [electrocute.io](https://electrocute.io) · [@electrocutelab](https://instagram.com/electrocutelab)
 
-itp graduate student, nyu · design engineer & creative technologist · may 2026
+nyu itp graduate student, nyu · design engineer & creative technologist · may 2026
 
 _made with curiosity. no logins. no ads. handmade web tools._
