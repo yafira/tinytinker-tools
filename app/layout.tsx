@@ -3,6 +3,7 @@ import "./globals.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import GitHubStars from "@/components/GitHubStars";
 
 const nav = [
   {
@@ -203,11 +204,12 @@ export default function RootLayout({
           <br />
           handmade web tools.
         </div>
+        <GitHubStars />
         <Link
           href="/request"
           style={{
-            display: "inline-block",
-            marginTop: 10,
+            display: "block",
+            marginTop: 8,
             fontFamily: "var(--font-mono)",
             fontSize: 11,
             color: "var(--accent)",

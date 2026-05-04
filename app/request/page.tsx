@@ -391,7 +391,7 @@ export default function RequestToolPage() {
             href="mailto:yafira@proton.me"
             style={{ color: "var(--accent)", textDecoration: "none" }}
           >
-            {"yafira@proton.me"}
+            {"yafira@nyu.edu"}
           </a>
         </div>
       </div>
