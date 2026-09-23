@@ -32,7 +32,14 @@ tiny, focused utilities for makers, engineers, artists, crafters, creative techn
 | wire gauge reference | AWG ↔ mm², ampacity, resistance per km               |
 | capacitor decoder    | 2-digit, 3-digit, EIA-198 codes → value              |
 | 555 timer calculator | astable & monostable frequency + timing              |
-| voltage divider      | solve for Vout, R1, R2, or Vin                       |
+| voltage divider      | solve for Vout, R1, R2, or Vin + load check          |
+
+### e-textiles
+
+| tool               | description                                                 |
+| ------------------ | ----------------------------------------------------------- |
+| conductive thread  | thread resistance + LED circuit check                       |
+| fabric & materials | resistance ref for conductive fabrics, sensors & insulators |
 
 ### code & dev
 
@@ -141,10 +148,8 @@ each tool is a single self-contained file. to add one:
 
 1. create a folder `app/tools/your-tool-name/`
 2. add `page.tsx` inside it — use `components/ToolPage.tsx` as the wrapper
-3. add it to the nav in `app/layout.tsx`
-4. add it to the grid in `components/ToolGrid.tsx` with a tag
-5. add it to `components/FeaturedTools.tsx`
-6. open a pull request
+3. add one entry to `lib/tools.ts` (this feeds the sidebar, grid, and featured section)
+4. open a pull request
 
 see [CONTRIBUTING.md](./CONTRIBUTING.md) for the full guide.
 
@@ -174,7 +179,7 @@ the design lives in css variables in `app/globals.css`. key tokens:
 --font-mono: "IBM Plex Mono", monospace;
 ```
 
-dark mode is handled via `[data-theme="dark"]` on the html element.
+dark mode is handled via `[data-theme="dark"]` on the html element. it follows the system setting until someone picks a theme with the toggle.
 
 please keep the aesthetic: monospace, lavender, warm, soft, handmade. ✦
 
@@ -185,7 +190,7 @@ please keep the aesthetic: monospace, lavender, warm, soft, handmade. ✦
 ```
 tinytinker/
 ├── app/
-│   ├── layout.tsx              ← sidebar, nav, dark mode, mobile menu
+│   ├── layout.tsx              ← html shell, metadata, theme script
 │   ├── page.tsx                ← homepage
 │   ├── globals.css             ← design tokens + global styles
 │   └── tools/
@@ -193,12 +198,14 @@ tinytinker/
 │       ├── ohms-law/page.tsx
 │       └── ...
 ├── components/
+│   ├── Shell.tsx               ← sidebar, nav, dark mode, mobile menu
 │   ├── ToolPage.tsx            ← shared wrapper (breadcrumb + header)
 │   ├── FeaturedTools.tsx       ← random featured section
 │   ├── ToolGrid.tsx            ← filterable tool grid
 │   ├── GitHubStars.tsx         ← live star count
 │   └── tinkerbit/              ← chat companion ui + styles
 ├── lib/
+│   ├── tools.ts                ← every tool, in one list
 │   └── tinkerbit/
 │       ├── knowledge.ts        ← everything tinkerbit knows
 │       └── match.ts            ← keyword matcher

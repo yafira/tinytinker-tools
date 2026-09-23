@@ -40,31 +40,22 @@ export default function YourToolPage() {
 }
 ```
 
-### 2. Add it to the nav
+### 2. Register it
 
-In `app/layout.tsx`, add to the relevant section:
+In `lib/tools.ts`, add an entry to the relevant section. The sidebar, the homepage grid, and the featured section all read from this list, so this is the only place you need to add it:
 
-```tsx
-{ href: "/tools/your-tool-name", label: "your tool name" },
+```ts
+{
+  href: "/tools/your-tool-name",
+  label: "your tool name",
+  desc: "short description",
+  tag: "calc",
+},
 ```
 
-### 3. Add it to the tool grid
+Add `nav: "shorter name"` if the label is too long for the sidebar.
 
-In `components/ToolGrid.tsx`, add to the relevant section:
-
-```tsx
-{ href: "/tools/your-tool-name", label: "your tool name", desc: "short description", tag: "calc" },
-```
-
-### 4. Add it to FeaturedTools
-
-In `components/FeaturedTools.tsx`, add to the `ALL_TOOLS` array:
-
-```tsx
-{ href: "/tools/your-tool-name", label: "your tool name", desc: "short description", category: "electronics", tag: "calc" },
-```
-
-### 5. Open a pull request
+### 3. Open a pull request
 
 That is it. Open a PR with a short description of what the tool does and who it is for.
 
@@ -131,7 +122,7 @@ Before opening a PR, make sure:
 
 - [ ] Tool works in both light and dark mode
 - [ ] Tool works on mobile (375px)
-- [ ] Tool is added to nav, ToolGrid, and FeaturedTools
+- [ ] Tool is registered in `lib/tools.ts`
 - [ ] No hardcoded colors — only CSS variables
 - [ ] No external API calls
 - [ ] TypeScript has no errors
