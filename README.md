@@ -82,6 +82,8 @@ tiny, focused utilities for makers, engineers, artists, crafters, creative techn
 
 tinkerbit is the site's resident chat "bot." click **ask tinkerbit** in the corner and ask which tool to use, or small questions about electronics, e-textiles, color, text & zines.
 
+<img src="public/screenshots/tinkerbit.png" alt="tinkerbit answering &quot;how do i fold a zine?&quot; with a link to the zine imposer" width="380">
+
 it is not an AI. tinkerbit is a hand-written knowledge base with a tiny keyword matcher attached, so every answer was written by a person.
 
 - **no network calls.** questions are matched in your browser and never sent anywhere.
