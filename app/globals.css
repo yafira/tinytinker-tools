@@ -87,6 +87,10 @@
   color: #86efac;
 }
 
+[data-theme="dark"] .btn-primary {
+  color: var(--bg);
+}
+
 /* base */
 
 * {
@@ -188,6 +192,12 @@ input[type="range"] {
 .btn-ghost:hover {
   background: var(--card-hover);
   border-color: var(--border-hover);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* cards */
@@ -355,6 +365,11 @@ input[type="range"] {
   }
   .mobile-header {
     display: flex !important;
+    padding-right: 76px !important;
+  }
+  .theme-toggle {
+    top: 14px !important;
+    right: 16px !important;
   }
   .main-content {
     padding-top: 56px;

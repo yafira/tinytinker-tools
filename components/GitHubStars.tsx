@@ -6,18 +6,21 @@ export default function GitHubStars() {
 
   useEffect(() => {
     fetch("https://api.github.com/repos/yafira/tinytinker-tools")
-      .then((res) => res.json())
-      .then((data) => setStars(data.stargazers_count))
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (typeof data?.stargazers_count === "number")
+          setStars(data.stargazers_count);
+      })
       .catch(() => {});
   }, []);
 
   if (stars === null) return null;
 
   return (
-    <div
-      onClick={() =>
-        window.open("https://github.com/yafira/tinytinker-tools", "_blank")
-      }
+    <a
+      href="https://github.com/yafira/tinytinker-tools"
+      target="_blank"
+      rel="noopener noreferrer"
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -31,15 +34,15 @@ export default function GitHubStars() {
         transition: "color 0.1s",
       }}
       onMouseEnter={(e) =>
-        ((e.currentTarget as HTMLDivElement).style.color = "var(--accent)")
+        ((e.currentTarget as HTMLAnchorElement).style.color = "var(--accent)")
       }
       onMouseLeave={(e) =>
-        ((e.currentTarget as HTMLDivElement).style.color = "var(--ink-ghost)")
+        ((e.currentTarget as HTMLAnchorElement).style.color = "var(--ink-ghost)")
       }
     >
       {"★ "}
       {stars}
-      {" stars on github"}
-    </div>
+      {stars === 1 ? " star on github" : " stars on github"}
+    </a>
   );
 }

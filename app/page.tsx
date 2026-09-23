@@ -4,7 +4,7 @@ import ToolGrid from "@/components/ToolGrid";
 
 export default function Home() {
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "48px 40px" }}>
+    <div style={{ maxWidth: 860, margin: "0 auto", padding: "clamp(28px, 5vw, 48px) clamp(20px, 5vw, 40px)" }}>
       {/* hero */}
       <div
         style={{
@@ -41,7 +41,7 @@ export default function Home() {
           <h1
             style={{
               fontFamily: "var(--font-mono)",
-              fontSize: 44,
+              fontSize: "clamp(32px, 7vw, 44px)",
               fontWeight: 400,
               lineHeight: 1.15,
               letterSpacing: "-0.03em",
@@ -99,12 +99,15 @@ export default function Home() {
           display: "flex",
           alignItems: "center",
           gap: 12,
+          flexWrap: "wrap",
         }}
       >
-        <Link href="/request" style={{ textDecoration: "none" }}>
-          <button className="btn btn-ghost" style={{ fontSize: 13 }}>
-            ✦ request a tool
-          </button>
+        <Link
+          href="/request"
+          className="btn btn-ghost"
+          style={{ fontSize: 13, textDecoration: "none", flexShrink: 0 }}
+        >
+          ✦ request a tool
         </Link>
         <span
           style={{

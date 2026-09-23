@@ -4,11 +4,12 @@ import Link from "next/link";
 
 const CATEGORIES = [
   "electronics",
+  "e-textiles",
+  "code & dev",
   "generative text",
   "color & design",
   "print & zine",
   "measurements",
-  "code & dev",
   "soft electronics",
   "other",
 ];
