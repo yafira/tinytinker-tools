@@ -1,199 +1,9 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { toolSections, type ToolTag } from "@/lib/tools";
 
-type Tag =
-  | "all"
-  | "calc"
-  | "gen"
-  | "ref"
-  | "decode"
-  | "convert"
-  | "test"
-  | "plan"
-  | "guide";
-
-const allTools = [
-  {
-    section: "electronics",
-    tools: [
-      {
-        href: "/tools/resistor",
-        label: "resistor decoder",
-        desc: "color band → resistance value",
-        tag: "decode",
-      },
-      {
-        href: "/tools/ohms-law",
-        label: "ohm's law",
-        desc: "V, I, R, P solver + LED resistor",
-        tag: "calc",
-      },
-      {
-        href: "/tools/wire-gauge",
-        label: "wire gauge reference",
-        desc: "AWG ↔ mm², ampacity, resistance",
-        tag: "ref",
-      },
-      {
-        href: "/tools/capacitor",
-        label: "capacitor decoder",
-        desc: "capacitor code → value",
-        tag: "decode",
-      },
-      {
-        href: "/tools/555-timer",
-        label: "555 timer",
-        desc: "astable & monostable frequency calculator",
-        tag: "calc",
-      },
-    ],
-  },
-  {
-    section: "e-textiles",
-    tools: [
-      {
-        href: "/tools/conductive-thread",
-        label: "conductive thread",
-        desc: "thread resistance + LED circuit check",
-        tag: "calc",
-      },
-      {
-        href: "/tools/fabric-resistance",
-        label: "fabric & materials",
-        desc: "resistance ref for conductive fabrics, sensors & insulators",
-        tag: "ref",
-      },
-    ],
-  },
-  {
-    section: "generative text",
-    tools: [
-      {
-        href: "/tools/markov",
-        label: "markov generator",
-        desc: "generate text from any corpus",
-        tag: "gen",
-      },
-      {
-        href: "/tools/cutup",
-        label: "cut-up machine",
-        desc: "burroughs-style text reassembly",
-        tag: "gen",
-      },
-      {
-        href: "/tools/glitch-text",
-        label: "glitch text",
-        desc: "zalgo, wide, morse, binary & more",
-        tag: "gen",
-      },
-      {
-        href: "/tools/zine-filler",
-        label: "zine filler",
-        desc: "placeholder text in 5 flavors",
-        tag: "gen",
-      },
-      {
-        href: "/tools/ascii",
-        label: "ascii generator",
-        desc: "big text, image → ascii, patterns",
-        tag: "gen",
-      },
-    ],
-  },
-  {
-    section: "color & design",
-    tools: [
-      {
-        href: "/tools/palette",
-        label: "color palette",
-        desc: "harmonious palettes from any seed color",
-        tag: "gen",
-      },
-      {
-        href: "/tools/color-converter",
-        label: "color converter",
-        desc: "hex ↔ rgb ↔ hsl ↔ oklch",
-        tag: "convert",
-      },
-      {
-        href: "/tools/hex-name",
-        label: "hex color namer",
-        desc: "give any hex a poetic name",
-        tag: "decode",
-      },
-      {
-        href: "/tools/color-cheatsheet",
-        label: "color cheatsheet",
-        desc: "css, tailwind, material, pastel & more",
-        tag: "ref",
-      },
-      {
-        href: "/tools/accessibility",
-        label: "accessibility checker",
-        desc: "contrast, color blindness & more",
-        tag: "test",
-      },
-    ],
-  },
-  {
-    section: "print & zine",
-    tools: [
-      {
-        href: "/tools/zine-imposer",
-        label: "zine imposer",
-        desc: "8-page mini-zine fold layout",
-        tag: "plan",
-      },
-    ],
-  },
-  {
-    section: "measurements",
-    tools: [
-      {
-        href: "/tools/unit-converter",
-        label: "unit converter",
-        desc: "length, weight, temp, fabric, wire & more",
-        tag: "convert",
-      },
-    ],
-  },
-  {
-    section: "code & dev",
-    tools: [
-      {
-        href: "/tools/json-formatter",
-        label: "json formatter",
-        desc: "format, validate and minify json",
-        tag: "convert",
-      },
-      {
-        href: "/tools/timestamp-converter",
-        label: "timestamp converter",
-        desc: "unix timestamps ↔ human readable dates",
-        tag: "convert",
-      },
-      {
-        href: "/tools/code-identifier",
-        label: "code identifier",
-        desc: "detect programming language from a snippet",
-        tag: "decode",
-      },
-      {
-        href: "/tools/binary-converter",
-        label: "binary / hex",
-        desc: "text & numbers → binary, hex, octal",
-        tag: "convert",
-      },
-      {
-        href: "/tools/regex-tester",
-        label: "regex tester",
-        desc: "test regex patterns live",
-        tag: "test",
-      },
-    ],
-  },
-];
+type Tag = "all" | ToolTag;
 
 const ALL_TAGS: Tag[] = [
   "all",
@@ -209,7 +19,7 @@ const ALL_TAGS: Tag[] = [
 export default function ToolGrid() {
   const [active, setActive] = useState<Tag>("all");
 
-  const filtered = allTools
+  const filtered = toolSections
     .map((section) => ({
       ...section,
       tools:
@@ -275,8 +85,8 @@ export default function ToolGrid() {
 
       {/* tool sections */}
       {filtered.map((section) => (
-        <div key={section.section} style={{ marginBottom: 40 }}>
-          <div className="section-head">{section.section}</div>
+        <div key={section.label} style={{ marginBottom: 40 }}>
+          <div className="section-head">{section.label}</div>
           <div
             style={{
               display: "grid",
