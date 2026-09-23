@@ -82,7 +82,10 @@ tiny, focused utilities for makers, engineers, artists, crafters, creative techn
 
 tinkerbit is the site's resident chat "bot." click **ask tinkerbit** in the corner and ask which tool to use, or small questions about electronics, e-textiles, color, text & zines.
 
-<img src="public/screenshots/tinkerbit.png" alt="tinkerbit answering &quot;how do i fold a zine?&quot; with a link to the zine imposer" width="380">
+|                                                                                                   |                                                                                                         |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| ![tinkerbit answering "how do i fold a zine?" with a link to the zine imposer](public/screenshots/tinkerbit.png) | ![tinkerbit in dark mode offering a web search for "what is a mosfet?"](public/screenshots/tinkerbit-dark.png) |
+| points you to the right tool                                                                      | offers a web search when it doesn't know                                                                |
 
 it is not an AI. tinkerbit is a hand-written knowledge base with a tiny keyword matcher attached, so every answer was written by a person.
 
