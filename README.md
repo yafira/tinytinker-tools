@@ -78,12 +78,42 @@ tiny, focused utilities for makers, engineers, artists, crafters, creative techn
 
 ---
 
+## ✦ tinkerbit
+
+tinkerbit is the site's resident chat "bot." click **ask tinkerbit** in the corner and ask which tool to use, or small questions about electronics, e-textiles, color, text & zines.
+
+it is not an AI. tinkerbit is a hand-written knowledge base with a tiny keyword matcher attached, so every answer was written by a person.
+
+- **no network calls.** questions are matched in your browser and never sent anywhere.
+- **no storage.** the conversation lives in memory and disappears when you refresh.
+- **links you to tools.** answers point to the right tool, with "maybe you meant" suggestions for close matches.
+- **knows its limits.** when it doesn't know something, it offers a duckduckgo search link that opens only if you click it.
+
+### teaching tinkerbit something new
+
+everything tinkerbit knows lives in `lib/tinkerbit/knowledge.ts`. to add an answer, add an entry:
+
+```ts
+{
+  id: "velostat",
+  name: "velostat",
+  category: "e-textiles",
+  href: "/tools/fabric-resistance", // optional, links to a tool
+  answer: "what tinkerbit says when this is the best match.",
+  keywords: ["velostat", "pressure sensor", "squeeze"], // words people might type
+}
+```
+
+more keywords means better matching. the matcher itself lives in `lib/tinkerbit/match.ts`.
+
+---
+
 ## stack
 
 - **[next.js 14](https://nextjs.org)** — app router
 - **[tailwind css](https://tailwindcss.com)** — utility classes
 - **[ibm plex mono](https://fonts.google.com/specimen/IBM+Plex+Mono)** — the only font you need
-- **100% client-side** — no backend, no database, no api keys. nothing leaves your browser.
+- **100% client-side** — no backend, no database, no api keys. nothing leaves your browser, including anything you ask tinkerbit.
 
 ---
 
@@ -161,7 +191,12 @@ tinytinker/
 │   ├── ToolPage.tsx            ← shared wrapper (breadcrumb + header)
 │   ├── FeaturedTools.tsx       ← random featured section
 │   ├── ToolGrid.tsx            ← filterable tool grid
-│   └── GitHubStars.tsx         ← live star count
+│   ├── GitHubStars.tsx         ← live star count
+│   └── tinkerbit/              ← chat companion ui + styles
+├── lib/
+│   └── tinkerbit/
+│       ├── knowledge.ts        ← everything tinkerbit knows
+│       └── match.ts            ← keyword matcher
 └── public/
     ├── flower.png              ← our mascot ✦
     └── screenshots/            ← readme screenshots

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import GitHubStars from "@/components/GitHubStars";
+import Tinkerbit from "@/components/tinkerbit/Tinkerbit";
 
 const nav = [
   {
@@ -385,6 +386,8 @@ export default function RootLayout({
         >
           {dark ? "☀︎" : "☽"}
         </button>
+
+        <Tinkerbit />
       </body>
     </html>
   );
