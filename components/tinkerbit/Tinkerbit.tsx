@@ -7,7 +7,13 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ask, type Reply } from "@/lib/tinkerbit/match";
+import { allTools } from "@/lib/tools";
 import "./Tinkerbit.css";
+
+// label a link by the tool it opens, not the knowledge entry that matched
+function toolName(href: string, fallback: string) {
+  return allTools.find((t) => t.href === href)?.label ?? fallback;
+}
 
 type Message = {
   role: "you" | "tinkerbit";
@@ -130,7 +136,7 @@ export default function Tinkerbit() {
 
               {m.reply?.match?.href && (
                 <Link href={m.reply.match.href} className="tb-chip tb-chip--go">
-                  open {m.reply.match.name} →
+                  open {toolName(m.reply.match.href, m.reply.match.name)} →
                 </Link>
               )}
 
@@ -140,7 +146,7 @@ export default function Tinkerbit() {
                   {m.reply.alternates.map((alt) =>
                     alt.href ? (
                       <Link key={alt.id} href={alt.href} className="tb-chip">
-                        {alt.name}
+                        {toolName(alt.href, alt.name)}
                       </Link>
                     ) : (
                       <button

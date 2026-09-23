@@ -174,10 +174,19 @@ export function ask(question: string): Reply {
 
   const best = scored[0];
   // alternates: close-scoring, distinct entries (within 60% of the top score)
+  // skip runner-ups that link to the same tool as the best match or each other
+  const seen = new Set(best.entry.href ? [best.entry.href] : []);
   const alternates = scored
-    .slice(1, 4)
+    .slice(1)
     .filter((s) => s.score >= best.score * 0.6)
-    .map((s) => s.entry);
+    .map((s) => s.entry)
+    .filter((e) => {
+      if (!e.href) return true;
+      if (seen.has(e.href)) return false;
+      seen.add(e.href);
+      return true;
+    })
+    .slice(0, 3);
 
   return { text: best.entry.answer, match: best.entry, alternates };
 }
