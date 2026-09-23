@@ -84,6 +84,8 @@ const STOP_WORDS = new Set([
 function tokenize(input: string): string[] {
   return input
     .toLowerCase()
+    // drop apostrophes so "what's" becomes "whats", not "what" + "s"
+    .replace(/['’]/g, "")
     .replace(/[^a-z0-9\s#.-]/g, " ")
     .split(/\s+/)
     .filter(Boolean)
@@ -112,7 +114,7 @@ function scoreEntry(entry: Entry, tokens: string[], rawQuery: string): number {
   const nameTokens = tokenize(entry.name);
   for (const t of tokens) {
     if (nameTokens.includes(t)) score += 4;
-    if (entry.category.includes(t)) score += 1;
+    if (t.length >= 3 && entry.category.includes(t)) score += 1;
   }
 
   return score;
